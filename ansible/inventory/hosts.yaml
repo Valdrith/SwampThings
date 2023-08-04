@@ -1,0 +1,14 @@
+---
+kubernetes:
+  children:
+    master:
+      hosts:
+        swampthing01:
+          ansible_user: evan
+          ansible_host: 192.168.1.201
+        swampthing02:
+          ansible_user: evan
+          ansible_host: 192.168.1.202
+        swampthing03:
+          ansible_user: evan
+          ansible_host: 192.168.1.203
