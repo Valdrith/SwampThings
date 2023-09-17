@@ -78,3 +78,21 @@ spec:
       limits:
         memory: 13710M
 
+    volumeClaimTemplates:
+      - name: config
+        mountPath: /config
+        accessMode: ReadWriteOnce
+        size: 200Gi
+        storageClass: ceph-block
+
+    resources:
+      requests:
+        cpu: 5m
+        memory: 13710M
+      limits:
+        memory: 13710M
+
+      containers:
+      - env:                       # < environment variables. See https://hub.docker.com/r/linuxserver/plex
+        - name: PLEX_CLAIM
+          value: claim-_v34LPFRqZuqNWsdiF2s
