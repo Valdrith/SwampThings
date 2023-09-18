@@ -71,13 +71,13 @@ spec:
         - 109
         - 65539
 
-    resources:
-      requests:
-        cpu: 5m
-        memory: 13710M
-      limits:
-        memory: 13710M
-
+#    resources:
+#      requests:
+#        cpu: 5m
+#        memory: 13710M
+#      limits:
+#        memory: 13710M
+#
     volumeClaimTemplates:
       - name: config
         mountPath: /config
