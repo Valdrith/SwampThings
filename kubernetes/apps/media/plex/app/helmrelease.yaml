@@ -50,13 +50,13 @@ spec:
           - hosts:
               - *host
 
-    persistence:
-      nfs-nas-media:
-        enabled: true
-        mountPath: /storage/media
-        path: /Videos
-        server: 192.168.1.5
-        type: nfs
+#    persistence:
+#      nfs-nas-media:
+#        enabled: true
+#        mountPath: /storage/media
+#        path: /Videos
+#        server: 192.168.1.5
+#        type: nfs
       transcode:
         enabled: true
         type: emptyDir
@@ -71,13 +71,13 @@ spec:
         - 109
         - 65539
 
-#    resources:
-#      requests:
-#        cpu: 5m
-#        memory: 13710M
-#      limits:
-#        memory: 13710M
-#
+    resources:
+      requests:
+        cpu: 5m
+        memory: 13710M
+      limits:
+        memory: 13710M
+
 #    volumeClaimTemplates:
 #      - name: config
 #        mountPath: /config
