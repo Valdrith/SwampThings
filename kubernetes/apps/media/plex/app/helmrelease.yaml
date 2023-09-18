@@ -85,14 +85,14 @@ spec:
         size: 200Gi
         storageClass: ceph-block
 
-    resources:
-      requests:
-        cpu: 5m
-        memory: 13710M
-      limits:
-        memory: 13710M
+#    resources:
+#      requests:
+#        cpu: 5m
+#        memory: 13710M
+#      limits:
+#        memory: 13710M
 
-      containers:
-      - env:                       # < environment variables. See https://hub.docker.com/r/linuxserver/plex
-        - name: PLEX_CLAIM
-          value: claim-_v34LPFRqZuqNWsdiF2s
+#      containers:
+#      - env:                       # < environment variables. See https://hub.docker.com/r/linuxserver/plex
+#        - name: PLEX_CLAIM
+#          value: claim-_v34LPFRqZuqNWsdiF2s
