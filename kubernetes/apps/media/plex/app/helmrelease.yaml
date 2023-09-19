@@ -92,7 +92,7 @@ spec:
       limits:
         memory: 13710M
 
-      containers:
-      - env:                       # < environment variables. See https://hub.docker.com/r/linuxserver/plex
-        - name: PLEX_CLAIM
-          value: claim-_v34LPFRqZuqNWsdiF2s
+#      containers:
+#      - env:                       # < environment variables. See https://hub.docker.com/r/linuxserver/plex
+#        - name: PLEX_CLAIM
+#         value: claim-_v34LPFRqZuqNWsdiF2s
