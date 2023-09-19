@@ -14,6 +14,11 @@ spec:
         kind: HelmRepository
         name: bjw-s
         namespace: flux-system
+      containers:
+        - env:                       # < environment variables. See https://hub.docker.com/r/linuxserver/plex
+        - name: PLEX_CLAIM
+          value: claim-cexjAbfNoJrNvVyYxcB9
+
   interval: 30m
   values:
     controller:
@@ -78,16 +83,11 @@ spec:
       limits:
         memory: 13710M
 
-#    volumeClaimTemplates:
-#      - name: config
-#        mountPath: /config
-#        accessMode: ReadWriteOnce
-#        size: 200Gi
-#        storageClass: ceph-block
+    volumeClaimTemplates:
+      - name: config
+        mountPath: /config
+        accessMode: ReadWriteOnce
+        size: 200Gi
+        storageClass: ceph-block
 
 
-
-      containers:
-      - env:                       # < environment variables. See https://hub.docker.com/r/linuxserver/plex
-        - name: PLEX_CLAIM
-          value: claim-pjixphJJZcw2rMsGfHaG
