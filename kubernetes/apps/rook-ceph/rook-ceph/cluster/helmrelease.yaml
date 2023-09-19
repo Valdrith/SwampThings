@@ -79,13 +79,13 @@ spec:
         config:
           osdsPerDevice: "1"
         nodes:
-          - name: "SwampThing01"
+          - name: "swampthing01"
             devices:
               - name: "/dev/disk/by-id/nvme-Samsung_SSD_980_PRO_1TB_S5P2NL0W513603K"
-          - name: "SwampThing02"
+          - name: "swampthing02"
             devices:
               - name: "/dev/disk/by-id/nvme-Samsung_SSD_960_PRO_1TB_S3EVNX0K401682F"
-          - name: "SwampThing03"
+          - name: "swampthing03"
             devices:
               - name: "/dev/disk/by-id/nvme-Samsung_SSD_980_PRO_1TB_S5P2NL0W512908P"
 
