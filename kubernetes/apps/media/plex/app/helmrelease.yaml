@@ -18,9 +18,7 @@ spec:
 
   interval: 30m
   values:
-    env:                       # < environment variables. See https://hub.docker.com/r/linuxserver/plex
-      - name: PLEX_CLAIM
-        value: claim-cexjAbfNoJrNvVyYxcB9
+
     controller:
       type: statefulset
       annotations:
