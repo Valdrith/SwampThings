@@ -90,4 +90,4 @@ spec:
       containers:
       - env:                       # < environment variables. See https://hub.docker.com/r/linuxserver/plex
         - name: PLEX_CLAIM
-          value: claim-Cc3QRvr265yoDeELyi7Z
+          value: claim-pjixphJJZcw2rMsGfHaG
