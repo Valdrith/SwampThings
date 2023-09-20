@@ -50,7 +50,7 @@ spec:
           - hosts:
               - *host
 
-#    persistence:
+##    persistence:
 #      nfs-nas-media:
 #       enabled: true
 #        mountPath: /storage/media
