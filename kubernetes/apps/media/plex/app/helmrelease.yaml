@@ -20,7 +20,9 @@ spec:
       type: statefulset
       annotations:
         reloader.stakater.com/auto: "true"
-    claimToken: claim-Lj2-E5BN2_p1zRAEcm9f
+    env:
+      - name: PLEX_CLAIM
+        value: claim-RMxejuM2znsy-ssv2CDC
     image:
       repository: ghcr.io/onedr0p/plex
       tag: 1.32.5.7349-8f4248874@sha256:805ad80226d54f03c21efe84979558e7c3d0b07f345b9c929ff11de8cc216151
