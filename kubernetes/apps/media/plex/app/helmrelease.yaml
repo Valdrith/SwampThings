@@ -50,16 +50,16 @@ spec:
           - hosts:
               - *host
 
-##    persistence:
-#      nfs-nas-media:
-#       enabled: true
-#        mountPath: /storage/media
-#        path: /Videos
-#        server: 192.168.1.5
-#        type: nfs
-#      transcode:
-#        enabled: true
-#        type: emptyDir
+    persistence:
+      nfs-nas-media:
+       enabled: true
+        mountPath: /storage/media
+        path: /Videos
+        server: 192.168.1.5
+        type: nfs
+      transcode:
+        enabled: true
+        type: emptyDir
 
     podSecurityContext:
       runAsUser: 568
