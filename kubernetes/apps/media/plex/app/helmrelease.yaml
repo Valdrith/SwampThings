@@ -78,11 +78,11 @@ spec:
       limits:
         memory: 13710M
 
-#    volumeClaimTemplates:
-#      - name: config
-#        mountPath: /config
-#        accessMode: ReadWriteOnce
-#        size: 200Gi
-#        storageClass: ceph-block
+    volumeClaimTemplates:
+      - name: config
+        mountPath: /config
+        accessMode: ReadWriteOnce
+        size: 200Gi
+        storageClass: ceph-block
 
 
