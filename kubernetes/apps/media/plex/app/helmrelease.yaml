@@ -85,4 +85,5 @@ spec:
         size: 200Gi
         storageClass: ceph-block
 
+claimToken: claim-8-9yYakxct_hgCk1QaVA
 
