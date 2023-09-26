@@ -44,8 +44,8 @@ spec:
         sabnzbd.downloads.svc.cluster,
         sabnzbd.downloads.svc.cluster.local,
         sabnzbd.theswamp.home
-      SABNZBD__API_KEY: "$(api_key)"
-      SABNZBD__NZB_KEY: "$(nzb_key)"
+      SABNZBD__API_KEY: $(api_key)
+      SABNZBD__NZB_KEY: $(nzb_key)
 
     service:
       main:
