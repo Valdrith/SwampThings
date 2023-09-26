@@ -62,6 +62,16 @@ spec:
         tls:
           - hosts:
               - *host
+    persistence:
+      nfs-nas-media:
+        enabled: true
+        mountPath: /volume1/videos
+        path: /
+        server: 192.168.1.5
+        type: nfs
+      transcode:
+        enabled: true
+        type: emptyDir
 
     volumeClaimTemplates:
       - name: config
