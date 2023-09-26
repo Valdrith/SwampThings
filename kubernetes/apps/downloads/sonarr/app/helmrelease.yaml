@@ -1,0 +1,78 @@
+---
+# yaml-language-server: $schema=https://raw.githubusercontent.com/fluxcd-community/flux2-schemas/main/helmrelease-helm-v2beta1.json
+apiVersion: helm.toolkit.fluxcd.io/v2beta1
+kind: HelmRelease
+metadata:
+  name: sonarr
+  namespace: downloads
+spec:
+  interval: 30m
+  chart:
+    spec:
+      chart: app-template
+      version: 1.5.1
+      interval: 30m
+      sourceRef:
+        kind: HelmRepository
+        name: bjw-s
+        namespace: flux-system
+
+  values:
+    controller:
+      annotations:
+        reloader.stakater.com/auto: "true"
+
+    image:
+      repository: ghcr.io/onedr0p/sonarr-develop
+      tag: 4.0.0.676@sha256:a2a3df87b3d4e30932bb4ad684459f0dd13dffb86599012a98e388b4c4321ce2
+
+    podSecurityContext:
+      runAsUser: 568
+      runAsGroup: 568
+      fsGroup: 568
+      fsGroupChangePolicy: "OnRootMismatch"
+      supplementalGroups:
+        - 65539
+        - 100
+
+    env:
+      SONARR__INSTANCE_NAME: Sonarr
+      SONARR__PORT: &port 8989
+      SONARR__AUTHENTICATION_METHOD: External
+      SONARR__AUTHENTICATION_REQUIRED: DisabledForLocalAddresses
+      SONARR__APPLICATION_URL: "https://sonarr.theswamp.home"
+      SONARR__LOG_LEVEL: info
+
+
+    service:
+      main:
+        ports:
+          http:
+            port: *port
+
+    ingress:
+      main:
+        enabled: true
+        ingressClassName: "internal"
+
+        hosts:
+          - host: &host "sonarr.theswamp.home"
+            paths:
+              - path: /
+        tls:
+          - hosts:
+              - *host
+
+    volumeClaimTemplates:
+      - name: config
+        mountPath: /config
+        accessMode: ReadWriteOnce
+        size: 1Gi
+        storageClass: ceph-block
+
+    resources:
+      requests:
+        cpu: 5m
+        memory: 1024M
+      limits:
+        memory: 1024M
