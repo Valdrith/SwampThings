@@ -63,6 +63,9 @@ spec:
           - hosts:
               - *host
     persistence:
+      config:
+        enabled: true
+        existingClaim: sonarr-config
       nfs-nas-media:
         enabled: true
         mountPath: /volume1/videos
@@ -73,12 +76,7 @@ spec:
         enabled: true
         type: emptyDir
 
-    volumeClaimTemplates:
-      - name: config
-        mountPath: /config
-        accessMode: ReadWriteOnce
-        size: 1Gi
-        storageClass: ceph-block
+
 
     resources:
       requests:
