@@ -75,16 +75,10 @@ spec:
               - *host
 
     persistence:
-      sabnzbd-config:
-        enabled: true
-        existingClaim: sabnzbd-config
-      "data/nas-media":
+      media:
         enabled: true
         existingClaim: nas-media
-        globalMounts:
-          - controllers:
-              - main
-            mountpath: /data/nas-media
+        mountPath: /data/nas-media
 
     resources:
       requests:
@@ -92,3 +86,10 @@ spec:
         memory: "8192M"
       limits:
         memory: "8192M"
+
+    volumeClaimTemplates:
+      - name: config
+        mountPath: /config
+        accessMode: ReadWriteOnce
+        size: 1Gi
+        storageClass: ceph-block

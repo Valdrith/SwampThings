@@ -62,19 +62,15 @@ spec:
         tls:
           - hosts:
               - *host
+
     persistence:
-      sonarr-config:
+      config:
         enabled: true
         existingClaim: sonarr-config
       media:
         enabled: true
         existingClaim: nas-media
-        globalMounts:
-          - controllers:
-              - main
-            path: /data/nas-media
-
-
+        mountPath: /data/nas-media
 
     resources:
       requests:

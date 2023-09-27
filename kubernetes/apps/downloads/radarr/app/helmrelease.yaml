@@ -76,9 +76,10 @@ spec:
               - *host
 
     persistence:
-      radarr-config:
+      config:
         enabled: true
         existingClaim: radarr-config
+
       media:
         enabled: true
         existingClaim: nas-media
@@ -86,5 +87,3 @@ spec:
           - controllers:
               - main
             path: /data/nas-media
-
-
