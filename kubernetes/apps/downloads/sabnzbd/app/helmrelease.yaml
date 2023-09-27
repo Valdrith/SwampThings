@@ -78,7 +78,7 @@ spec:
       sabnzbd-config:
         enabled: true
         existingClaim: sabnzbd-config
-      data/nas-media:
+      crap:
         enabled: true
         existingClaim: nas-media
         globalMounts:
