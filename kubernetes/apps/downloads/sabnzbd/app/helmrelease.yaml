@@ -84,7 +84,7 @@ spec:
         globalMounts:
           - controllers:
               - main
-            path: /data/nas-media
+            mountpath: /data/nas-media
 
     resources:
       requests:
