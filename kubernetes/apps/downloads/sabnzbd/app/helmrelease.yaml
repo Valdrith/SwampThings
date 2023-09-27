@@ -92,10 +92,3 @@ spec:
         memory: "8192M"
       limits:
         memory: "8192M"
-
- #   volumeClaimTemplates:
- #     - name: config
- #       mountPath: /config
- #       accessMode: ReadWriteOnce
- #       size: 1Gi
- #       storageClass: ceph-block
