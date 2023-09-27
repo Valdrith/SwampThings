@@ -79,13 +79,12 @@ spec:
       config:
         enabled: true
         existingClaim: radarr-config
-      nfs-nas-media:
+      media:
         enabled: true
-        mountPath: /volume1/videos
-        path: /
-        server: 192.168.1.5
-        type: nfs
-      transcode:
-        enabled: true
-        type: emptyDir
+        existingClaim: nas-media
+        globalMounts:
+          - controllers:
+              - main
+            path: /data/nas-media
+
 
