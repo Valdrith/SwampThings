@@ -63,7 +63,7 @@ spec:
           - hosts:
               - *host
     persistence:
-      config:
+      sonarr-config:
         enabled: true
         existingClaim: sonarr-config
       media:

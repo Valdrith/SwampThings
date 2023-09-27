@@ -76,7 +76,7 @@ spec:
               - *host
 
     persistence:
-      config:
+      radarr-config:
         enabled: true
         existingClaim: radarr-config
       media:

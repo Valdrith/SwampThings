@@ -75,7 +75,7 @@ spec:
               - *host
 
     persistence:
-      config:
+      sabnzbd-config:
         enabled: true
         existingClaim: sabnzbd-config
       data/nas-media:
