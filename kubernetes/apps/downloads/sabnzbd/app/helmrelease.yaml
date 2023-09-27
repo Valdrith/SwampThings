@@ -75,15 +75,16 @@ spec:
               - *host
 
     persistence:
-      nfs-nas-media:
+      config:
         enabled: true
-        mountPath: /volume1/videos
-        path: /
-        server: 192.168.1.5
-        type: nfs
-      transcode:
+        existingClaim: sabnzbd-config
+      media:
         enabled: true
-        type: emptyDir
+        existingClaim: nas-media
+        globalMounts:
+          - controllers:
+              - main
+            path: /data/nas-media
 
     resources:
       requests:
