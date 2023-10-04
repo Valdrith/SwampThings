@@ -44,7 +44,7 @@ spec:
           nginx.ingress.kubernetes.io/backend-protocol: HTTPS
         ingressClassName: "internal"
         hosts:
-          - host: &host plex.theswamp.home
+          - host: &host plexernetes.theswamp.home
             paths:
               - path: /
                 pathType: Prefix
@@ -80,12 +80,12 @@ spec:
       limits:
         memory: 13710M
 
-    # volumeClaimTemplates:
-    #   - name: config
-    #     mountPath: /config
-    #     accessMode: ReadWriteOnce
-    #     size: 200Gi
-    #     storageClass: ceph-block
+    volumeClaimTemplates:
+      - name: config
+        mountPath: /config
+        accessMode: ReadWriteOnce
+        size: 200Gi
+        storageClass: ceph-block
 
 
 
