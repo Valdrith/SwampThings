@@ -22,7 +22,7 @@ spec:
         reloader.stakater.com/auto: "true"
     env:
       - name: PLEX_CLAIM
-        value: claim-HGNx9sycPbJisGYpL3Zo
+        value: claim-3QE_2mjioweFY4JybNkx
     image:
       repository: ghcr.io/onedr0p/plex
       tag: 1.32.5.7349-8f4248874@sha256:805ad80226d54f03c21efe84979558e7c3d0b07f345b9c929ff11de8cc216151
