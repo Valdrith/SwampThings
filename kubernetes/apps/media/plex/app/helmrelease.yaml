@@ -22,7 +22,7 @@ spec:
         reloader.stakater.com/auto: "true"
     env:
       - name: PLEX_CLAIM
-        value: claim-3QE_2mjioweFY4JybNkx
+        value: claim-sgq6MamyUZM-4Tj-y1vc
     image:
       repository: ghcr.io/onedr0p/plex
       tag: 1.32.5.7349-8f4248874@sha256:805ad80226d54f03c21efe84979558e7c3d0b07f345b9c929ff11de8cc216151
@@ -44,7 +44,7 @@ spec:
           nginx.ingress.kubernetes.io/backend-protocol: HTTPS
         ingressClassName: "internal"
         hosts:
-          - host: &host plexernetes.theswamp.home
+          - host: &host plex.theswamp.home
             paths:
               - path: /
                 pathType: Prefix
