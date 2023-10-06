@@ -44,7 +44,7 @@ spec:
           nginx.ingress.kubernetes.io/backend-protocol: HTTPS
         ingressClassName: "internal"
         hosts:
-          - host: &host plexernetes.theswamp.home
+          - host: &host plex.theswamp.home
             paths:
               - path: /
                 pathType: Prefix
