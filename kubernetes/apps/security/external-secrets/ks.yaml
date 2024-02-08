@@ -30,7 +30,7 @@ spec:
     labels:
       app.kubernetes.io/name: *appname
   interval: 10m
-  path: "./kubernetes/main/apps/security/external-secrets/stores"
+  path: "./kubernetes/apps/security/external-secrets/stores"
   prune: true
   sourceRef:
     kind: GitRepository
