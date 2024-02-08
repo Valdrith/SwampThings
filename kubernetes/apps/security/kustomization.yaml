@@ -5,4 +5,7 @@ resources:
   # Pre Flux-Kustomizations
   - ./namespace.yaml
   - ./external-secrets/ks.yaml
+<<<<<<< HEAD
  # - ./external-secrets/stores
+=======
+>>>>>>> 42b4a4009d0e07c0d6014970f55185b0bd813d79
