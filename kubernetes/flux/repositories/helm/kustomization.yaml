@@ -21,3 +21,4 @@ resources:
   - ./rook-ceph.yaml
   - ./backube.yaml
   - ./external-secrets.yaml
+  - ./minecraft.yaml
