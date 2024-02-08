@@ -4,4 +4,4 @@ kind: Kustomization
 resources:
   # Pre Flux-Kustomizations
   - ./namespace.yaml
-  - ./external-secrets/ks.yaml
+  #- ./external-secrets/ks.yaml
