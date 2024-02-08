@@ -54,7 +54,7 @@ spec:
     persistence:
       dataDir:
         enabled: true
-        existingClaim: *app
+        existingClaim: minecraft-server
     serviceAnnotations:
       #io.cilium/lb-ipam-ips: "${SVC_MINECRAFT_ADDR}"
       mc-router.itzg.me/externalServerName: "minecraft.${SECRET_DOMAIN}"
