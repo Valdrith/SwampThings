@@ -71,7 +71,6 @@ spec:
       gameMode: survival
       pvp: false
       onlineMode: false
-      whitelist: "Valdrith9422"
       ops: "Valdrith9422"
       motd: "248Craft"
       worldSaveName: 248Craft
