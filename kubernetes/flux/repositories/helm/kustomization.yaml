@@ -20,3 +20,4 @@ resources:
   - ./weave-gitops.yaml
   - ./rook-ceph.yaml
   - ./backube.yaml
+  - ./external-secrets.yaml
