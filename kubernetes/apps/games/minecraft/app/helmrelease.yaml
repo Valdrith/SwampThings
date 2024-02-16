@@ -51,7 +51,7 @@ spec:
     extraEnv:
       TZ: "${TIMEZONE}"
       ENABLE_AUTOPAUSE: FALSE
-      MODS: https://cdn.modrinth.com/data/F7wXag4i/versions/pjIlCcVy/inventorymanagement-1.4.0%2B1.20.2.jar
+      MODS: 'https://cdn.modrinth.com/data/F7wXag4i/versions/pjIlCcVy/inventorymanagement-1.4.0%2B1.20.2.jar'
     persistence:
       dataDir:
         enabled: true
