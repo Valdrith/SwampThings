@@ -51,6 +51,7 @@ spec:
     extraEnv:
       TZ: "${TIMEZONE}"
       ENABLE_AUTOPAUSE: FALSE
+      MODS: https://modrinth.com/mod/inventory-management
     persistence:
       dataDir:
         enabled: true
