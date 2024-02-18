@@ -51,7 +51,7 @@ spec:
     extraEnv:
       TZ: "${TIMEZONE}"
       ENABLE_AUTOPAUSE: FALSE
-      MODS: https://cdn.modrinth.com/data/P7dR8mSH/versions/8GVp7wDk/fabric-api-0.91.6%2B1.20.2.jar,https://cdn.modrinth.com/data/F7wXag4i/versions/pjIlCcVy/inventorymanagement-1.4.0%2B1.20.2.jar,https://cdn.modrinth.com/data/TQTTVgYE/versions/xksYKkvF/fabric-carpet-1.20.2-1.4.121%2Bv231011.jar,https://cdn.modrinth.com/data/UjXIyw47/versions/rgu59rCE/shulkerdropstwo-1.20.2-3.3.jar
+      MODS: https://cdn.modrinth.com/data/P7dR8mSH/versions/8GVp7wDk/fabric-api-0.91.6%2B1.20.2.jar,https://cdn.modrinth.com/data/F7wXag4i/versions/pjIlCcVy/inventorymanagement-1.4.0%2B1.20.2.jar,https://cdn.modrinth.com/data/TQTTVgYE/versions/xksYKkvF/fabric-carpet-1.20.2-1.4.121%2Bv231011.jar,https://cdn.modrinth.com/data/e0M1UDsY/versions/uPswIBHn/collective-1.20.2-7.30.jar,https://cdn.modrinth.com/data/UjXIyw47/versions/rgu59rCE/shulkerdropstwo-1.20.2-3.3.jar
     persistence:
       dataDir:
         enabled: true
