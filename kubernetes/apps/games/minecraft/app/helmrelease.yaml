@@ -51,10 +51,10 @@ spec:
     extraEnv:
       TZ: "${TIMEZONE}"
       ENABLE_AUTOPAUSE: FALSE
-      MODS: https://cdn.modrinth.com/data/P7dR8mSH/versions/8GVp7wDk/fabric-api-0.91.6%2B1.20.2.jar,https://cdn.modrinth.com/data/F7wXag4i/versions/pjIlCcVy/inventorymanagement-1.4.0%2B1.20.2.jar,https://cdn.modrinth.com/data/TQTTVgYE/versions/xksYKkvF/fabric-carpet-1.20.2-1.4.121%2Bv231011.jar,https://cdn.modrinth.com/data/zQhsx8KF/versions/y3YGV2rC/servux-fabric-1.20.2-0.1.0.jar
+      MODS: https://cdn.modrinth.com/data/P7dR8mSH/versions/8GVp7wDk/fabric-api-0.91.6%2B1.20.2.jar,https://cdn.modrinth.com/data/F7wXag4i/versions/pjIlCcVy/inventorymanagement-1.4.0%2B1.20.2.jar,https://cdn.modrinth.com/data/TQTTVgYE/versions/xksYKkvF/fabric-carpet-1.20.2-1.4.121%2Bv231011.jar,https://cdn.modrinth.com/data/zQhsx8KF/versions/y3YGV2rC/servux-fabric-1.20.2-0.1.0.jar,https://theswampmine.blob.core.windows.net/mods/worldedit-mod-7.2.17.jar
       DATAPACKS: https://theswampmine.blob.core.windows.net/mods/double_shulker_shells_v1.3.6.zip,https://theswampmine.blob.core.windows.net/mods/fast_leaf_decay_v2.0.9.zip,https://theswampmine.blob.core.windows.net/mods/more_mob_heads_v2.12.1.zip,https://theswampmine.blob.core.windows.net/mods/unlock_all_recipes_v2.0.7.zip,https://theswampmine.blob.core.windows.net/mods/multiplayer_sleep_v2.6.4.zip,https://theswampmine.blob.core.windows.net/mods/track_raw_statistics_v1.7.0.zip,https://theswampmine.blob.core.windows.net/mods/track_statistics_v1.1.5.zip,https://theswampmine.blob.core.windows.net/mods/villager_death_messages_v1.2.5.zip,https://theswampmine.blob.core.windows.net/mods/craftable_Bundles_MC1.20-1.20.4.zip
     CF_API_KEY: $$2a$$10$$BebpL47dj9vfAfkUavroFe87YkrWHwR68vt7BHO4VbnRSWMEtRSNS
-    CURSEFORGE_FILES: 4793145
+    #CURSEFORGE_FILES: 4793145
     persistence:
       dataDir:
         enabled: true
