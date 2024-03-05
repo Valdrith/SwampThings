@@ -60,7 +60,7 @@ spec:
         enabled: true
         existingClaim: minecraft-server
     serviceAnnotations:
-      io.cilium/lb-ipam-ips: "${SVC_MINECRAFT_ADDR}"
+      #io.cilium/lb-ipam-ips: "${SVC_MINECRAFT_ADDR}"
       mc-router.itzg.me/externalServerName: "minecraft.${SECRET_DOMAIN}"
     minecraftServer:
       eula: "TRUE"
