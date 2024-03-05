@@ -119,3 +119,4 @@ spec:
     name: *secret
     valuesKey: RCON_PASSWORD
     targetPath: minecraftServer.rcon.password
+#trying to force a change
