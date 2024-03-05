@@ -74,7 +74,7 @@ spec:
       maxTickTime: -1
       gameMode: survival
       pvp: false
-      onlineMode: false
+      onlineMode: true
       ops: "Valdrith9422"
       motd: "248Craft"
       worldSaveName: 248Craft
