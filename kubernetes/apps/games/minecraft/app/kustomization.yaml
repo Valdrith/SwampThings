@@ -6,4 +6,5 @@ resources:
   - ./pvc.yaml
   - ./externalsecret.yaml
   - ./helmrelease.yaml
+  - ./stuff.yaml
 
