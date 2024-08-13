@@ -120,4 +120,4 @@ spec:
     name: *secret
     valuesKey: RCON_PASSWORD
     targetPath: minecraftServer.rcon.password
-#
+
