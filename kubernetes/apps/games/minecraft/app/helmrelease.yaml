@@ -33,7 +33,7 @@ spec:
       secret.reloader.stakater.com/reload: &secret minecraft
     image:
       repository: ghcr.io/itzg/minecraft-server
-      tag: java17
+      tag: latest
     resources:
       requests:
         cpu: 1000m
@@ -65,7 +65,7 @@ spec:
       mc-router.itzg.me/externalServerName: "minecraft.${SECRET_DOMAIN}"
     minecraftServer:
       eula: "TRUE"
-      version: 1.21.1
+      version: latest
       type: FABRIC
       forceReDownload: true
       jvmXXOpts: "-XX:MaxRAMPercentage=75"
