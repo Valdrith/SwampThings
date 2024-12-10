@@ -55,8 +55,8 @@ spec:
     persistence:
       nfs-nas-media:
         enabled: true
-        mountPath: /
-        path: /Media
+        mountPath: /volume1/videos
+        path: /volume1/videos
         server: 192.168.1.6
         type: nfs
       transcode:
