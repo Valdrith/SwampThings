@@ -1,5 +1,5 @@
 ---
-apiVersion: helm.toolkit.fluxcd.io/v2
+apiVersion: helm.toolkit.fluxcd.io/v2beta1
 kind: HelmRelease
 metadata:
   name: plex
@@ -8,7 +8,7 @@ spec:
   chart:
     spec:
       chart: app-template
-      version: 3.5.1
+      version: 1.5.1
       interval: 30m
       sourceRef:
         kind: HelmRepository
@@ -55,9 +55,9 @@ spec:
     persistence:
       nfs-nas-media:
         enabled: true
-        mountPath: /volume1/videos
+        mountPath: /Media
         path: /
-        server: 192.168.1.5
+        server: 192.168.1.6
         type: nfs
       transcode:
         enabled: true
