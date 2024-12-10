@@ -97,8 +97,8 @@ spec:
     persistence:
       nfs-nas-media:
         enabled: true
-        mountPath: /Media
-        path: /
+        mountPath: /var/nfs/shared/Media
+        path: /mnt
         server: 192.168.1.6
         type: nfs
       transcode:
