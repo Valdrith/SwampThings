@@ -56,8 +56,8 @@ spec:
       nfs-nas-media:
         enabled: true
         mountPath: /volume1/videos
-        path: /
-        server: 192.168.1.6
+        path: /mnt
+        server: 192.168.1.5
         type: nfs
       transcode:
         enabled: true
