@@ -1,5 +1,5 @@
 ---
-apiVersion: helm.toolkit.fluxcd.io/v2beta1
+apiVersion: helm.toolkit.fluxcd.io/v2
 kind: HelmRelease
 metadata:
   name: plex
@@ -8,7 +8,7 @@ spec:
   chart:
     spec:
       chart: app-template
-      version: 1.5.1
+      version: 3.5.1
       interval: 30m
       sourceRef:
         kind: HelmRepository
@@ -16,19 +16,62 @@ spec:
         namespace: flux-system
   interval: 30m
   values:
-    controller:
-      type: statefulset
-      annotations:
-        reloader.stakater.com/auto: "true"
-    env:
-      - name: PLEX_CLAIM
-        value: claim-3HcLYsR95MfcypXu1TQ3
-    image:
-      repository: ghcr.io/onedr0p/plex
-      tag: 1.32.5.7349-8f4248874@sha256:805ad80226d54f03c21efe84979558e7c3d0b07f345b9c929ff11de8cc216151
+    controllers:
+      plex:
+        annotations:
+          reloader.stakater.com/auto: "true"
+        pod:
+          SecurityContext:
+            runAsUser: 568
+            runAsGroup: 568
+            fsGroup: 568
+            fsGroupChangePolicy: "OnRootMismatch"
+            supplementalGroups:
+              - 44
+              - 109
+              - 65539
+        containers:
+          app:
+            image:
+              repository: ghcr.io/onedr0p/plex
+              tag: 1.41.2.9200-c6bbc1b53@sha256:1f28b5e5a964481f80e76db3c986082d2fc3bca2d16d2742704e9adf8349c79c
+            env:
+              - name: PLEX_CLAIM
+                value: claim-3HcLYsR95MfcypXu1TQ3
+            probes:
+              liveness: &probes
+                enabled: true
+                custom: true
+                spec:
+                  httpGet:
+                    path: /identity
+                    port: 32400
+                  initialDelaySeconds: 0
+                  periodSeconds: 10
+                  timeoutSeconds: 1
+                  failureThreshold: 3
+              readiness: *probes
+              startup:
+                enabled: true
+                spec:
+                  failureThreshold: 30
+                  periodSeconds: 10
+            securityContext:
+              allowPrivilegeEscalation: false
+              readOnlyRootFilesystem: true
+              capabilities:
+                drop:
+                  - ALL
+            resources:
+              requests:
+                cpu: 5m
+                memory: 13710M
+              limits:
+                memory: 13710M
 
     service:
-      main:
+      app:
+        controller: plex
         type: LoadBalancer
         externalTrafficPolicy: Cluster
         annotations:
@@ -38,8 +81,7 @@ spec:
             port: 32400
 
     ingress:
-      main:
-        enabled: true
+      app:
         annotations:
           nginx.ingress.kubernetes.io/backend-protocol: HTTPS
         ingressClassName: "internal"
@@ -47,10 +89,10 @@ spec:
           - host: &host plex.theswamp.home
             paths:
               - path: /
-                pathType: Prefix
-        tls:
-          - hosts:
-              - *host
+                service:
+                  identifier: app
+                  port: http
+
 
     persistence:
       nfs-nas-media:
@@ -63,29 +105,12 @@ spec:
         enabled: true
         type: emptyDir
 
-    podSecurityContext:
-      runAsUser: 568
-      runAsGroup: 568
-      fsGroup: 568
-      fsGroupChangePolicy: "OnRootMismatch"
-      supplementalGroups:
-        - 44
-        - 109
-        - 65539
-
-    resources:
-      requests:
-        cpu: 5m
-        memory: 13710M
-      limits:
-        memory: 13710M
-
-    volumeClaimTemplates:
-      - name: config
-        mountPath: /config
-        accessMode: ReadWriteOnce
-        size: 200Gi
-        storageClass: ceph-block
+      volumeClaimTemplates:
+        - name: config
+          mountPath: /config
+          accessMode: ReadWriteOnce
+          size: 200Gi
+          storageClass: ceph-block
 
 
 
